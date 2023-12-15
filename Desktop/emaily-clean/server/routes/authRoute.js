@@ -14,11 +14,10 @@ module.exports=(app)=>{
             scope:['profile','email']  
         })
     );
-    /**错误：Cannot GET /auth/google/callback */
 
     
     app.get('/auth/google/callback', 
-        passport.authenticate('google'),/**中间件：验证google返回的用户信息，添加入req.user中*/
+        passport.authenticate('google'),
         (req,res)=>{
             res.redirect('/surveys');
         }
