@@ -1,22 +1,16 @@
-
 import 'materialize-css/dist/css/materialize.min.css'; 
 
-
-import React from 'react';
 import ReactDOM from "react-dom/client";
-
-import Redux from 'redux';
-import { createStore, applyMiddleware } from 'redux'; 
 import { Provider } from 'react-redux';
-import reducers from './reducers';
+import { createStore, applyMiddleware } from 'redux'; 
 import {thunk} from 'redux-thunk';
-import App from './components/app';
 
+import App from './components/app';
+import reducers from './reducers';
 
 
 
 const store = createStore(reducers,{},applyMiddleware(thunk));
-
 
 
 const el = document.getElementById("root"); 

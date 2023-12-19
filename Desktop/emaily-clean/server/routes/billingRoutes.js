@@ -1,4 +1,3 @@
-
 const key =require('../config/keys');
 const stripe = require('stripe')(key.stripeSecretKey);
 const requireLogin =require('../middlewares/requireLogin');
@@ -12,7 +11,7 @@ module.exports=(app)=>{
             amount: 500,
             currency: 'usd',
             description: 'recharge for your account',
-            source:'req.body.id'
+            source:req.body.id
         });
         
         req.user.credits+=5;
